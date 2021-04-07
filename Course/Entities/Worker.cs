@@ -11,14 +11,14 @@ namespace Course.Entities
         public string Name { get; set; }
         public WorkerLevel Level { get; set; }
         public double BaseSalary { get; set; }
-        public Department Department { get; set; }
-        public List<HourContract> Contracts { get; set; } = new List<HourContract>();
+        public Department Department { get; set; } //associação entre duas classes diferentes
+        public List<HourContract> Contracts { get; set; } = new List<HourContract>(); //já instancio para garantir que ela não é nula.
         //construtores
         public Worker()
         {
         }
         
-        public Worker(string name, WorkerLevel level, double baseSalary, Department department)
+        public Worker(string name, WorkerLevel level, double baseSalary, Department department) //meu construtor não deve ter uma associação para muitos
         {
             Name = name;
             Level = level;
